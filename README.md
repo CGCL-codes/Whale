@@ -16,8 +16,8 @@ First, we propose a novel RDMA-assisted stream multicast scheme with a self-adju
 Second, we re-design the communication mechanism in existing DSPSs by replacing the instance-oriented communication with a new worker-oriented communication scheme, which saves significant costs for redundant serialization and communications. 
 We implement Whale on top of Apache Storm and evaluate it using experiments with large-scale datasets. The results show that Whale achieves 56.6x improvement of system throughput and 97% reduction of processing latency compared to existing designs.
 
-# 2. Documentation
-Developers and contributors should also take a look at our [Developer documentation](DEVELOPER.md).
+# 2. Architecture of Whale
+![image](https://github.com/Whale2021/Whale/blob/master/images/Whale_architecture.png)
 
 # 3. How to use?
 ## 3.1 Environment
