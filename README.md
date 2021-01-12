@@ -24,7 +24,7 @@ Whale includes two main components: stream multicast and worker-oriented communi
 # 3. How to use?
 ## 3.1 Environment
 We deploy the Whale system on a cluster consisting. Each machine is equipped with a 16-core 2.6GHz Intel(R) Xeon(R) CPU , 64GB RAM, 
-Red Hat 6.2 system, and a Mellanox InfiniBand FDR 40Gbps NIC and a 1Gbps Ethernet NIC. One machine is configured to be the master node running as nimbus, and the others machines serve as worker nodes running as supervisors.
+Red Hat 6.2 system, and a Mellanox InfiniBand FDR 56Gbps NIC and a 1Gbps Ethernet NIC. One machine is configured to be the master node running as nimbus, and the others machines serve as worker nodes running as supervisors.
 
 ## 3.2 Building Whale
 Developers and contributors shoudl take a look at [Developer documentation](DEVELOPER.md) to build Whale source code.
