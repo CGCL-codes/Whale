@@ -19,6 +19,8 @@ We implement Whale on top of Apache Storm and evaluate it using experiments with
 # 2. Architecture of Whale
 ![image](https://github.com/Whale2021/Whale/blob/master/images/Whale_architecture.png)
 
+Whale includes two main components: stream multicast and worker-oriented communication. The former fully exploits the zero-copy RDMA network to efficiently process highly dynamic streams. The stream multicast scheduler constructs a non-blocking multicast tree which elaborately chooses the maximum out-degree and minimizes the average multicast latency for an incoming stream. To cope with stream dynamics, the system workload monitor periodically monitors the current workloads of the source instance while the multicast controller adjusts the dynamic multicast structure accordingly. The work-oriented communication aims at reducing the redundant serialization and communication. The batch component packages the IDs with the data item into a BatchTuple and serializes BatchTuple for multicasting. The dispatcher deserializes BatchTuple and dispatches the receiving tuple to the locally hosted destination instances according to the obtained instance IDs.
+
 # 3. How to use?
 ## 3.1 Environment
 We deploy the Whale system on a cluster consisting. Each machine is equipped with a 16-core 2.6GHz Intel(R) Xeon(R) CPU , 64GB RAM, 
