@@ -23,11 +23,10 @@ Whale includes two main components: stream multicast and worker-oriented communi
 
 # 3. How to use?
 ## 3.1 Environment
-We deploy the Whale system on a cluster consisting 30 machines. Each machine is equipped with a 16-core 2.6GHz Intel(R) Xeon(R) CPU , 64GB RAM, 
-Red Hat 6.2 system, and a Mellanox InfiniBand FDR 56Gbps NIC and a 1Gbps Ethernet NIC. One machine is configured to be the master node running as nimbus, and the others machines serve as worker nodes running as supervisors.
+We deploy the Whale system on a cluster consisting 30 machines. Each machine is equipped with a 16-core 2.6GHz Intel(R) Xeon(R) CPU , 64GB RAM, 256GB HDD, Red Hat 6.2 system, and a Mellanox InfiniBand FDR 56Gbps NIC and a 1Gbps Ethernet NIC. One machine is configured to be the master node running as nimbus, and the others machines serve as worker nodes running as supervisors.
 
 ## 3.2 Building Whale
-Developers and contributors shoudl take a look at [Developer documentation](DEVELOPER.md) to build Whale source code.
+Developers and contributors should take a look at [Developer documentation](DEVELOPER.md) to build Whale source code.
 
 If you already deploy the Apache Storm (version 2.0.0) cluster environment, you only need to replace these jars to `$STORM_HOME/lib` and `$STORM_HOME/lib-worker`
 > * storm-client-2.0.0-SNAPSHOT.jar
@@ -60,18 +59,18 @@ Building disni.jar and rdmachannel-core.jar, you just only see [RDMA-Channel](ht
 ## 4.1 Buidling Benchmark
 Whale benchmark code is maintained using [Maven](http://maven.apache.org/). Generate the excutable jar by running
 ```
-cd benchmark/benchmark-xxx.jar
-mvn clean install -Dmaven.test.skip=true -Dcheckstyle.skip=true
+cd benchmark/benchmark-didiOrderMatch
+mvn clean package -Dmaven.test.skip=true -Dcheckstyle.skip=true
 ```
 
 ## 4.2 Running Benchmark
 After deploying a Whale cluster, you can launch Whale by submitting its jar to the cluster. Please refer to Storm documents for how to
 [set up a Storm cluster](https://storm.apache.org/documentation/Setting-up-a-Storm-cluster.html) and [run topologies on a Storm cluster](https://storm.apache.org/documentation/Running-topologies-on-a-production-cluster.ht)
 
-``` shell
-storm jar benchmark-multicastModel-2.0.0-SNAPSHOT.jar org.apache.storm.benchmark.multicast.MulticastModelBalancedParitalBenchTopology MulticastBenchTopology ordersTopic 24 1 23 4 100000 rdma 1
-storm jar benchmark-multicastModel-2.0.0-SNAPSHOT.jar org.apache.storm.benchmark.multicast.MulticastModelBinomialTreeBenchTopology MulticastBenchTopology ordersTopic 24 1 23 100000 rdma 1
-storm jar benchmark-multicastModel-2A.0.0-SNAPSHOT.jar org.apache.storm.benchmark.multicast.MulticastModelSequentialBenchTopology SequentialMulticastBenchTopology ordersTopic 24 1 23 500000 rdma 1
+```shell
+storm jar benchmark-didiOrderMatch-2.0.0-SNAPSHOT.jar org.apache.storm.benchmark.multicast.MulticastModelBalancedParitalBenchTopology BenchTopology ordersTopic 30 1 480 3 rdma 1  
+storm jar benchmark-didiOrderMatch-2.0.0-SNAPSHOT.jar org.apache.storm.benchmark.multicast.MulticastModelBinomialTreeBenchTopology BenchTopology ordersTopic 30 1 480 rdma 1  
+storm jar benchmark-didiOrderMatch-2.0.0-SNAPSHOT.jar org.apache.storm.benchmark.multicast.MulticastModelSequentialBenchTopology BenchTopology ordersTopic 30 1 480 rdma 1  
 ```
 
 (Didi data and NASDQ data have to be import before running)
