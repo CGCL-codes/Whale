@@ -50,7 +50,7 @@ public class KafkaPoissonBenchACKSpout<K, V> extends KafkaPoissonSpout<K, V> {
         this.throughputTimer = new Timer();
         this.latencyLock =new Object();
 
-        //设置计时器没1s计算时间
+        //设置计时器每1s计算延迟
         latencyTimer.scheduleAtFixedRate(new TimerTask() {
             public void run() {
                 if(startTimeMills!=0 && latencytuplecount!=0){
@@ -65,7 +65,7 @@ public class KafkaPoissonBenchACKSpout<K, V> extends KafkaPoissonSpout<K, V> {
             }
         }, 10,latencyTimerPeriod);// 设定指定的时间time,此处为1000毫秒
 
-        //设置计时器没1s计算时间
+        //设置计时器每1s输出吞吐
         throughputTimer.scheduleAtFixedRate(new TimerTask() {
             public void run() {
                 collector.emit(THROUGHPUT_STREAM_ID, new Values(thisTaskId, throughputCount, System.currentTimeMillis()));

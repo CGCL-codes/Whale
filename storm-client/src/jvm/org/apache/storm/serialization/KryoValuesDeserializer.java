@@ -30,12 +30,12 @@ public class KryoValuesDeserializer {
     
     public KryoValuesDeserializer(Map<String, Object> conf) {
         _kryo = SerializationFactory.getKryo(conf);
-        _kryoInput = new Input(1);
+        _kryoInput = new Input(1024);
     }
     
     public List<Object> deserializeFrom(Input input) {
     	ListDelegate delegate = _kryo.readObject(input, ListDelegate.class);
-   	return delegate.getDelegate();
+   	    return delegate.getDelegate();
     }
     
     public List<Object> deserialize(byte[] ser) throws IOException {

@@ -32,7 +32,7 @@ public class KryoValuesSerializer {
     public KryoValuesSerializer(Map<String, Object> conf) {
         _kryo = SerializationFactory.getKryo(conf);
         _delegate = new ListDelegate();
-        _kryoOut = new Output(2000, 2000000000);
+        _kryoOut = new Output(1024, 2000000000);
     }
     
     public void serializeInto(List<Object> values, Output out) throws IOException {

@@ -299,7 +299,8 @@ public class KafkaPoissonSpout<K, V> extends BaseRichSpout {
     public void nextTuple() {
         try {
             long start = System.nanoTime();
-            int exp = Poisson.staticNextInt(expect);
+//            int exp = Poisson.staticNextInt(expect);
+            int exp = expect;
             for (int i = 0; i < exp; ) {
                 if (refreshSubscriptionTimer.isExpiredResetOnTrue()) {
                     kafkaSpoutConfig.getSubscription().refreshAssignment();
