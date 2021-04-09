@@ -1,0 +1,299 @@
+######################################################################
+## Whale
+######################################################################
+
++ env | sed "s/root/USER/g"
+MKLROOT=/public/software/compiler/composer_xe_2015.0.090/mkl
+MANPATH=/public/software//mpi/openmpi/1.8.7/intel/share/man:/public/software/compiler/composer_xe_2015.0.090/man/en_US:/public/software/compiler/composer_xe_2015.0.090/man/en_US:/public/software/compiler/composer_xe_2015.0.090/debugger/gdb/intel64/share/man/:/public/software/compiler/composer_xe_2015.0.090/debugger/gdb/intel64_mic/share/man/:/public/software/compiler/composer_xe_2015.0.090/man/en_US:/public/software/compiler/composer_xe_2015.0.090/man/en_US:/public/software/compiler/composer_xe_2015.0.090/debugger/gdb/intel64/share/man/:/public/software/compiler/composer_xe_2015.0.090/debugger/gdb/intel64_mic/share/man/:/public/software/compiler/composer_xe_2015.0.090/man/en_US:/public/software/compiler/composer_xe_2015.0.090/man/en_US:/public/software/compiler/composer_xe_2015.0.090/debugger/gdb/intel64/share/man/:/public/software/compiler/composer_xe_2015.0.090/debugger/gdb/intel64_mic/share/man/:/opt/gridview//pbs//dispatcher//man:/public/software/compiler/composer_xe_2015.0.090/man/en_US::::
+_DSM_BARRIER=SHM
+HOSTNAME=node30
+GAUSS_ARCHDIR=/public/software/g09/arch
+SPARK_HOME=/opt/spark/spark-2.3.1-bin-hadoop2.7
+INTEL_LICENSE_FILE=/public/software/compiler/composer_xe_2015.0.090/licenses::/public/software/compiler/composer_xe_2015.0.090/licenses:/opt/intel/licenses:/USER/intel/licenses:/public/software/compiler/composer_xe_2015.0.090/licenses:/opt/intel/licenses:/USER/intel/licenses:/public/software/compiler/composer_xe_2015.0.090/licenses:/opt/intel/licenses:/USER/intel/licenses
+IPPROOT=/public/software/compiler/composer_xe_2015.0.090/ipp
+SHELL=/bin/bash
+TERM=linux
+HISTSIZE=5000
+HADOOP_HOME=/Storage/BigdataStorage-2.6.5
+SSH_CLIENT=11.11.0.91 38228 22
+GDBSERVER_MIC=/public/software/compiler/composer_xe_2015.0.090/debugger/gdb/target/mic/bin/gdbserver
+LIBRARY_PATH=/public/software/compiler/composer_xe_2015.0.090/compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/ipp/../compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/ipp/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/mkl/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/tbb/lib/intel64/gcc4.1:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/ipp/../compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/ipp/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/mkl/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/tbb/lib/intel64/gcc4.1:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/ipp/../compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/ipp/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/mkl/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/tbb/lib/intel64/gcc4.1:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/mkl/lib/intel64:
+FPATH=/public/software/compiler/composer_xe_2015.0.090/mkl/include:
+QTDIR=/usr/lib64/qt-3.3
+QTINC=/usr/lib64/qt-3.3/include
+SSH_TTY=/dev/pts/0
+MIC_LD_LIBRARY_PATH=/public/software/compiler/composer_xe_2015.0.090/compiler/lib/mic:/public/software/compiler/composer_xe_2015.0.090/mpirt/lib/mic:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/mic:/public/software/compiler/composer_xe_2015.0.090/mkl/lib/mic:/public/software/compiler/composer_xe_2015.0.090/tbb/lib/mic:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/mic:/public/software/compiler/composer_xe_2015.0.090/mpirt/lib/mic:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/mic:/public/software/compiler/composer_xe_2015.0.090/mkl/lib/mic:/public/software/compiler/composer_xe_2015.0.090/tbb/lib/mic:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/mic:/public/software/compiler/composer_xe_2015.0.090/mpirt/lib/mic:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/mic:/public/software/compiler/composer_xe_2015.0.090/mkl/lib/mic:/public/software/compiler/composer_xe_2015.0.090/tbb/lib/mic:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/mic:/public/software/compiler/composer_xe_2015.0.090/mkl/lib/mic:
+STORM_HOME=/whale/storm/apache-storm-2.0.0-SNAPSHOT
+USER=USER
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.tbz=01;31:*.tbz2=01;31:*.bz=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:
+LD_LIBRARY_PATH=/usr/lib64:/lib64:/public/software/gcc/lib64:/public/software//mpi/openmpi/1.8.7/intel/lib/openmpi:/public/software//mpi/openmpi/1.8.7/intel/lib:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/mpirt/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/ipp/../compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/ipp/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/mkl/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/tbb/lib/intel64/gcc4.1:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/mpirt/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/ipp/../compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/ipp/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/mkl/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/tbb/lib/intel64/gcc4.1:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/mpirt/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/ipp/../compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/ipp/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/mkl/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/tbb/lib/intel64/gcc4.1:/public/software/g09/bsd:/public/software/g09/local:/public/software/g09/extras:/public/software/g09:/opt/gridview//pbs//dispatcher//lib:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/mkl/lib/intel64::/usr/local/lib64:/usr/local/lib:/public/software/g09:/public/software/gv/lib:/public/software/gcc/mpc/lib:/opt/hadoop/hadoop-2.7.6/lib/native:/usr/local/lib/libdisni/lib
+g09USER=/public/software
+MIC_LIBRARY_PATH=/public/software/compiler/composer_xe_2015.0.090/compiler/lib/mic:/public/software/compiler/composer_xe_2015.0.090/mpirt/lib/mic:/public/software/compiler/composer_xe_2015.0.090/tbb/lib/mic:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/mic:/public/software/compiler/composer_xe_2015.0.090/mpirt/lib/mic:/public/software/compiler/composer_xe_2015.0.090/tbb/lib/mic:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/mic:/public/software/compiler/composer_xe_2015.0.090/mpirt/lib/mic:/public/software/compiler/composer_xe_2015.0.090/tbb/lib/mic
+STOMR_HOME=/whale/storm/apache-storm-2.0.0-SNAPSHOT
+CPATH=/public/software/compiler/composer_xe_2015.0.090/ipp/include:/public/software/compiler/composer_xe_2015.0.090/mkl/include:/public/software/compiler/composer_xe_2015.0.090/tbb/include:/public/software/compiler/composer_xe_2015.0.090/ipp/include:/public/software/compiler/composer_xe_2015.0.090/mkl/include:/public/software/compiler/composer_xe_2015.0.090/tbb/include:/public/software/compiler/composer_xe_2015.0.090/ipp/include:/public/software/compiler/composer_xe_2015.0.090/mkl/include:/public/software/compiler/composer_xe_2015.0.090/tbb/include:/public/software/compiler/composer_xe_2015.0.090/mkl/include:
+G09BASIS=/public/software/g09/basis
+NLSPATH=/public/software/compiler/composer_xe_2015.0.090/compiler/lib/intel64/locale/%l_%t/%N:/public/software/compiler/composer_xe_2015.0.090/ipp/lib/intel64/locale/%l_%t/%N:/public/software/compiler/composer_xe_2015.0.090/mkl/lib/intel64/locale/%l_%t/%N:/public/software/compiler/composer_xe_2015.0.090/debugger/gdb/intel64_mic/share/locale/%l_%t/%N:/public/software/compiler/composer_xe_2015.0.090/debugger/gdb/intel64/share/locale/%l_%t/%N:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/intel64/locale/%l_%t/%N:/public/software/compiler/composer_xe_2015.0.090/ipp/lib/intel64/locale/%l_%t/%N:/public/software/compiler/composer_xe_2015.0.090/mkl/lib/intel64/locale/%l_%t/%N:/public/software/compiler/composer_xe_2015.0.090/debugger/gdb/intel64_mic/share/locale/%l_%t/%N:/public/software/compiler/composer_xe_2015.0.090/debugger/gdb/intel64/share/locale/%l_%t/%N:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/intel64/locale/%l_%t/%N:/public/software/compiler/composer_xe_2015.0.090/ipp/lib/intel64/locale/%l_%t/%N:/public/software/compiler/composer_xe_2015.0.090/mkl/lib/intel64/locale/%l_%t/%N:/public/software/compiler/composer_xe_2015.0.090/debugger/gdb/intel64_mic/share/locale/%l_%t/%N:/public/software/compiler/composer_xe_2015.0.090/debugger/gdb/intel64/share/locale/%l_%t/%N:/public/software/compiler/composer_xe_2015.0.090compiler/lib/intel64/locale/%l_%t/%N:/public/software/compiler/composer_xe_2015.0.090/mkl/lib/intel64/locale/%l_%t/%N:
+PATH=/opt/java/jdk1.8.0_151/bin:/opt/java/jdk1.8.0_151/jre/bin:/public/software/jdk1.7.0_80//bin:/public/software/gcc/bin:/public/software/Matlab2016a/bin/:/usr/lib64/qt-3.3/bin:/public/software/jpeg9a/bin:/public/software/mathlib/fftw3.3.4/bin:/public/software//mpi/openmpi/1.8.7/intel/bin:/public/software/compiler/composer_xe_2015.0.090/bin/intel64:/public/software/compiler/composer_xe_2015.0.090/mpirt/bin/intel64:/public/software/compiler/composer_xe_2015.0.090/debugger/gdb/intel64_mic/bin:/public/software/compiler/composer_xe_2015.0.090/bin/intel64:/public/software/compiler/composer_xe_2015.0.090/mpirt/bin/intel64:/public/software/compiler/composer_xe_2015.0.090/debugger/gdb/intel64_mic/bin:/public/software/compiler/composer_xe_2015.0.090/bin/intel64:/public/software/compiler/composer_xe_2015.0.090/mpirt/bin/intel64:/public/software/compiler/composer_xe_2015.0.090/debugger/gdb/intel64_mic/bin:/public/software/g09:/opt/gridview//pbs//dispatcher-sched//bin:/opt/gridview//pbs//dispatcher-sched//sbin:/opt/gridview//pbs//dispatcher//bin:/opt/gridview//pbs//dispatcher//sbin:/public/software/compiler/composer_xe_2015.0.090/bin/intel64:/opt/clusconf/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/public/software/g09/bsd:/public/software/g09/local:/public/software/g09/extras:/public/software/g09:/whale/apache-maven-3.5.4/bin:/opt/hadoop/hadoop-2.7.6/bin:/opt/hadoop/hadoop-2.7.6/sbin:/whale/storm/apache-storm-2.0.0-SNAPSHOT/bin:/whale/storm/apache-storm-2.0.0-SNAPSHOT/sbin:/opt/spark/spark-2.2.3-bin-hadoop2.7-NoIB/bin:/opt/spark/spark-2.2.3-bin-hadoop2.7-NoIB/sbin:/opt/spark/spark-2.3.1-bin-hadoop2.7/bin:/opt/spark/spark-2.3.1-bin-hadoop2.7/sbin:/streamx/flink-1.9.1/bin:/Storage/BigdataStorage-2.6.5/bin:/Storage/BigdataStorage-2.6.5/sbin:/USER/bin
+MAIL=/var/spool/mail/USER
+NFSCONF=/opt/clusconf/etc/nfs.cfg
+MAVEN_HOME=/whale/apache-maven-3.5.4
+TBBROOT=/public/software/compiler/composer_xe_2015.0.090/tbb
+PWD=/mnt/usb
+JAVA_HOME=/opt/java/jdk1.8.0_151
+IPMICONF=/opt/clusconf/etc/ipmi.cfg
+LANG=en_US.UTF-8
+KDE_IS_PRELINKED=1
+GDB_CROSS=/public/software/compiler/composer_xe_2015.0.090/debugger/gdb/intel64_mic/bin/gdb-mic
+MODULEPATH=/usr/share/Modules/modulefiles:/etc/modulefiles
+KDEDIRS=/usr
+LOADEDMODULES=
+GAUSS_SCRDIR=/public/software/g09/scratch
+GAUSS_EXEDIR=/public/software/g09/bsd:/public/software/g09/local:/public/software/g09/extras:/public/software/g09
+HISTCONTROL=ignoredups
+SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
+MPM_LAUNCHER=/public/software/compiler/composer_xe_2015.0.090/debugger/mpm/bin/start_mpm.sh
+INTEL_PYTHONHOME=/public/software/compiler/composer_xe_2015.0.090/debugger/python/intel64/
+FLINK_HOME=/streamx/flink-1.9.1
+HOME=/USER
+SHLVL=2
+LOGNAME=USER
+GV_DIR=/public/software/gv
+CVS_RSH=ssh
+QTLIB=/usr/lib64/qt-3.3/lib
+SSH_CONNECTION=11.11.0.91 38228 11.11.0.30 22
+CLASSPATH=.:/opt/java/jdk1.8.0_151/lib:/opt/java/jdk1.8.0_151/jre/lib:.:/public/software/jdk1.7.0_80//lib/dt.jar:/public/software/jdk1.7.0_80//lib/tools.jar
+MODULESHOME=/usr/share/Modules
+LESSOPEN=|/usr/bin/lesspipe.sh %s
+PGI_TERM=trace,abort
+INFOPATH=/public/software/compiler/composer_xe_2015.0.090/debugger/gdb/intel64/share/info/:/public/software/compiler/composer_xe_2015.0.090/debugger/gdb/intel64_mic/share/info/:/public/software/compiler/composer_xe_2015.0.090/debugger/gdb/intel64/share/info/:/public/software/compiler/composer_xe_2015.0.090/debugger/gdb/intel64_mic/share/info/:/public/software/compiler/composer_xe_2015.0.090/debugger/gdb/intel64/share/info/:/public/software/compiler/composer_xe_2015.0.090/debugger/gdb/intel64_mic/share/info/
+INCLUDE=/public/software//mpi/openmpi/1.8.7/intel/include:/public/software/compiler/composer_xe_2015.0.090/mkl/include:/public/software/compiler/composer_xe_2015.0.090/mkl/include:/public/software/compiler/composer_xe_2015.0.090/mkl/include:/public/software/compiler/composer_xe_2015.0.090/mkl/include:
+G_BROKEN_FILENAMES=1
+LD_LIBRARY_PAT=/public/software/compiler/composer_xe_2015.0.090//compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/mpirt/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/ipp/../compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/ipp/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/mkl/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/tbb/lib/intel64/gcc4.1:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/mpirt/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/ipp/../compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/ipp/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/mkl/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/tbb/lib/intel64/gcc4.1:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/mpirt/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/ipp/../compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/ipp/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/mkl/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/tbb/lib/intel64/gcc4.1:/public/software/g09/bsd:/public/software/g09/local:/public/software/g09/extras:/public/software/g09:/opt/gridview//pbs//dispatcher//lib:/public/software/compiler/composer_xe_2015.0.090/compiler/lib/intel64:/public/software/compiler/composer_xe_2015.0.090/mkl/lib/intel64::/usr/local/lib64:/usr/local/lib:/public/software/g09:/public/software/gv/lib
+HISTTIMEFORMAT=%F %T node91 USER 
+GAUSS_LEXEDIR=/public/software/g09/linda-exe
+module=() {  eval `/usr/bin/modulecmd bash $*`
+}
+_=/bin/env
+
++ set -x
++ lsb_release -a
+LSB Version:	:core-4.0-amd64:core-4.0-noarch:graphics-4.0-amd64:graphics-4.0-noarch:printing-4.0-amd64:printing-4.0-noarch
+Distributor ID:	RedHatEnterpriseServer
+Description:	Red Hat Enterprise Linux Server release 6.2 (Santiago)
+Release:	6.2
+Codename:	Santiago
+
++ uname -a
+Linux node30 2.6.32-220.el6.x86_64 #1 SMP Wed Nov 9 08:03:13 EST 2011 x86_64 x86_64 x86_64 GNU/Linux
+
++ lscpu || cat /proc/cpuinfo
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                16
+On-line CPU(s) list:   0-15
+Thread(s) per core:    1
+Core(s) per socket:    8
+Socket(s):             2
+NUMA node(s):          2
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 45
+Stepping:              7
+CPU MHz:               1200.000
+BogoMIPS:              5199.25
+Virtualization:        VT-x
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              256K
+L3 cache:              20480K
+NUMA node0 CPU(s):     0-7
+NUMA node1 CPU(s):     8-15
+
++ cat /proc/meminfo
+MemTotal:       65949776 kB
+MemFree:        32364368 kB
+Buffers:          513748 kB
+Cached:         27355036 kB
+SwapCached:            0 kB
+Active:         12257140 kB
+Inactive:       17296924 kB
+Active(anon):    1685444 kB
+Inactive(anon):     1028 kB
+Active(file):   10571696 kB
+Inactive(file): 17295896 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:       8388600 kB
+SwapFree:        8388600 kB
+Dirty:               248 kB
+Writeback:             0 kB
+AnonPages:       1685088 kB
+Mapped:            32716 kB
+Shmem:              1180 kB
+Slab:            1145396 kB
+SReclaimable:    1071636 kB
+SUnreclaim:        73760 kB
+KernelStack:        5120 kB
+PageTables:         9424 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    41363488 kB
+Committed_AS:    1721872 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:      391064 kB
+VmallocChunk:   34323870756 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:   1599488 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:        6144 kB
+DirectMap2M:     2082816 kB
+DirectMap1G:    65011712 kB
+
++ lsblk -a
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+loop0    7:0    0         0 loop 
+loop1    7:1    0         0 loop 
+loop2    7:2    0         0 loop 
+loop3    7:3    0         0 loop 
+loop4    7:4    0         0 loop 
+loop5    7:5    0         0 loop 
+loop6    7:6    0         0 loop 
+loop7    7:7    0         0 loop 
+sda      8:0    0 279.4G  0 disk 
+├─sda1   8:1    0   500M  0 part /boot
+├─sda2   8:2    0 211.9G  0 part /
+└─sda3   8:3    0     8G  0 part [SWAP]
+sdb      8:16   1    30G  0 disk 
+└─sdb1   8:17   1    30G  0 part /mnt/usb
+
++ lsscsi
+[0:0:0:0]    disk    TOSHIBA  MBF2300RC        0109  /dev/sda
+
++ (lshw -short -quiet -sanitize || lspci) | cat
+00:00.0 Host bridge: Intel Corporation Sandy Bridge DMI2 (rev 07)
+00:02.0 PCI bridge: Intel Corporation Sandy Bridge IIO PCI Express Root Port 2a (rev 07)
+00:03.0 PCI bridge: Intel Corporation Sandy Bridge IIO PCI Express Root Port 3a in PCI Express Mode (rev 07)
+00:03.1 PCI bridge: Intel Corporation Sandy Bridge IIO PCI Express Root Port 3b (rev 07)
+00:03.2 PCI bridge: Intel Corporation Sandy Bridge IIO PCI Express Root Port 3c (rev 07)
+00:05.0 System peripheral: Intel Corporation Sandy Bridge Address Map, VTd_Misc, System Management (rev 07)
+00:05.2 System peripheral: Intel Corporation Sandy Bridge Control Status and Global Errors (rev 07)
+00:05.4 PIC: Intel Corporation Sandy Bridge I/O APIC (rev 07)
+00:11.0 PCI bridge: Intel Corporation Patsburg PCI Express Virtual Root Port (rev 06)
+00:1a.0 USB controller: Intel Corporation Patsburg USB2 Enhanced Host Controller #2 (rev 06)
+00:1c.0 PCI bridge: Intel Corporation Patsburg PCI Express Root Port 1 (rev b6)
+00:1c.2 PCI bridge: Intel Corporation Patsburg PCI Express Root Port 3 (rev b6)
+00:1d.0 USB controller: Intel Corporation Patsburg USB2 Enhanced Host Controller #1 (rev 06)
+00:1e.0 PCI bridge: Intel Corporation 82801 PCI Bridge (rev a6)
+00:1f.0 ISA bridge: Intel Corporation Patsburg LPC Controller (rev 06)
+00:1f.2 SATA controller: Intel Corporation Patsburg 6-Port SATA AHCI Controller (rev 06)
+00:1f.3 SMBus: Intel Corporation Patsburg SMBus Host Controller (rev 06)
+03:00.0 Ethernet controller: Intel Corporation 82580 Gigabit Backplane Connection (rev 01)
+03:00.1 Ethernet controller: Intel Corporation 82580 Gigabit Backplane Connection (rev 01)
+04:00.0 Network controller: Mellanox Technologies MT27500 Family [ConnectX-3]
+05:00.0 Serial Attached SCSI controller: Intel Corporation Patsburg 4-Port SATA/SAS Storage Control Unit (rev 06)
+05:00.3 SMBus: Intel Corporation Patsburg SMBus Controller 0 (rev 06)
+07:00.0 PCI bridge: ASPEED Technology, Inc. AST1150 PCI-to-PCI Bridge (rev 02)
+08:00.0 VGA compatible controller: ASPEED Technology, Inc. ASPEED Graphics Family (rev 21)
+7f:08.0 System peripheral: Intel Corporation Sandy Bridge QPI Link 0 (rev 07)
+7f:08.3 System peripheral: Intel Corporation Sandy Bridge QPI Link Reut 0 (rev 07)
+7f:08.4 System peripheral: Intel Corporation Sandy Bridge QPI Link Reut 0 (rev 07)
+7f:09.0 System peripheral: Intel Corporation Sandy Bridge QPI Link 1 (rev 07)
+7f:09.3 System peripheral: Intel Corporation Sandy Bridge QPI Link Reut 1 (rev 07)
+7f:09.4 System peripheral: Intel Corporation Sandy Bridge QPI Link Reut 1 (rev 07)
+7f:0a.0 System peripheral: Intel Corporation Sandy Bridge Power Control Unit 0 (rev 07)
+7f:0a.1 System peripheral: Intel Corporation Sandy Bridge Power Control Unit 1 (rev 07)
+7f:0a.2 System peripheral: Intel Corporation Sandy Bridge Power Control Unit 2 (rev 07)
+7f:0a.3 System peripheral: Intel Corporation Sandy Bridge Power Control Unit 3 (rev 07)
+7f:0b.0 System peripheral: Intel Corporation Sandy Bridge Interrupt Control Registers (rev 07)
+7f:0b.3 System peripheral: Intel Corporation Sandy Bridge Semaphore and Scratchpad Configuration Registers (rev 07)
+7f:0c.0 System peripheral: Intel Corporation Sandy Bridge Unicast Register 0 (rev 07)
+7f:0c.1 System peripheral: Intel Corporation Sandy Bridge Unicast Register 0 (rev 07)
+7f:0c.2 System peripheral: Intel Corporation Sandy Bridge Unicast Register 0 (rev 07)
+7f:0c.3 System peripheral: Intel Corporation Sandy Bridge Unicast Register 0 (rev 07)
+7f:0c.6 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller System Address Decoder 0 (rev 07)
+7f:0c.7 System peripheral: Intel Corporation Sandy Bridge System Address Decoder (rev 07)
+7f:0d.0 System peripheral: Intel Corporation Sandy Bridge Unicast Register 0 (rev 07)
+7f:0d.1 System peripheral: Intel Corporation Sandy Bridge Unicast Register 0 (rev 07)
+7f:0d.2 System peripheral: Intel Corporation Sandy Bridge Unicast Register 0 (rev 07)
+7f:0d.3 System peripheral: Intel Corporation Sandy Bridge Unicast Register 0 (rev 07)
+7f:0d.6 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller System Address Decoder 1 (rev 07)
+7f:0e.0 System peripheral: Intel Corporation Sandy Bridge Processor Home Agent (rev 07)
+7f:0e.1 Performance counters: Intel Corporation Sandy Bridge Processor Home Agent Performance Monitoring (rev 07)
+7f:0f.0 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller Registers (rev 07)
+7f:0f.1 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller RAS Registers (rev 07)
+7f:0f.2 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller Target Address Decoder 0 (rev 07)
+7f:0f.3 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller Target Address Decoder 1 (rev 07)
+7f:0f.4 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller Target Address Decoder 2 (rev 07)
+7f:0f.5 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller Target Address Decoder 3 (rev 07)
+7f:0f.6 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller Target Address Decoder 4 (rev 07)
+7f:10.0 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller Channel 0-3 Thermal Control 0 (rev 07)
+7f:10.1 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller Channel 0-3 Thermal Control 1 (rev 07)
+7f:10.2 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller ERROR Registers 0 (rev 07)
+7f:10.3 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller ERROR Registers 1 (rev 07)
+7f:10.4 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller Channel 0-3 Thermal Control 2 (rev 07)
+7f:10.5 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller Channel 0-3 Thermal Control 3 (rev 07)
+7f:10.6 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller ERROR Registers 2 (rev 07)
+7f:10.7 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller ERROR Registers 3 (rev 07)
+7f:11.0 System peripheral: Intel Corporation Sandy Bridge DDRIO (rev 07)
+7f:13.0 System peripheral: Intel Corporation Sandy Bridge R2PCIe (rev 07)
+7f:13.1 Performance counters: Intel Corporation Sandy Bridge Ring to PCI Express Performance Monitor (rev 07)
+7f:13.4 Performance counters: Intel Corporation Sandy Bridge QuickPath Interconnect Agent Ring Registers (rev 07)
+7f:13.5 Performance counters: Intel Corporation Sandy Bridge Ring to QuickPath Interconnect Link 0 Performance Monitor (rev 07)
+7f:13.6 System peripheral: Intel Corporation Sandy Bridge Ring to QuickPath Interconnect Link 1 Performance Monitor (rev 07)
+80:02.0 PCI bridge: Intel Corporation Sandy Bridge IIO PCI Express Root Port 2a (rev 07)
+80:05.0 System peripheral: Intel Corporation Sandy Bridge Address Map, VTd_Misc, System Management (rev 07)
+80:05.2 System peripheral: Intel Corporation Sandy Bridge Control Status and Global Errors (rev 07)
+80:05.4 PIC: Intel Corporation Sandy Bridge I/O APIC (rev 07)
+ff:08.0 System peripheral: Intel Corporation Sandy Bridge QPI Link 0 (rev 07)
+ff:08.3 System peripheral: Intel Corporation Sandy Bridge QPI Link Reut 0 (rev 07)
+ff:08.4 System peripheral: Intel Corporation Sandy Bridge QPI Link Reut 0 (rev 07)
+ff:09.0 System peripheral: Intel Corporation Sandy Bridge QPI Link 1 (rev 07)
+ff:09.3 System peripheral: Intel Corporation Sandy Bridge QPI Link Reut 1 (rev 07)
+ff:09.4 System peripheral: Intel Corporation Sandy Bridge QPI Link Reut 1 (rev 07)
+ff:0a.0 System peripheral: Intel Corporation Sandy Bridge Power Control Unit 0 (rev 07)
+ff:0a.1 System peripheral: Intel Corporation Sandy Bridge Power Control Unit 1 (rev 07)
+ff:0a.2 System peripheral: Intel Corporation Sandy Bridge Power Control Unit 2 (rev 07)
+ff:0a.3 System peripheral: Intel Corporation Sandy Bridge Power Control Unit 3 (rev 07)
+ff:0b.0 System peripheral: Intel Corporation Sandy Bridge Interrupt Control Registers (rev 07)
+ff:0b.3 System peripheral: Intel Corporation Sandy Bridge Semaphore and Scratchpad Configuration Registers (rev 07)
+ff:0c.0 System peripheral: Intel Corporation Sandy Bridge Unicast Register 0 (rev 07)
+ff:0c.1 System peripheral: Intel Corporation Sandy Bridge Unicast Register 0 (rev 07)
+ff:0c.2 System peripheral: Intel Corporation Sandy Bridge Unicast Register 0 (rev 07)
+ff:0c.3 System peripheral: Intel Corporation Sandy Bridge Unicast Register 0 (rev 07)
+ff:0c.6 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller System Address Decoder 0 (rev 07)
+ff:0c.7 System peripheral: Intel Corporation Sandy Bridge System Address Decoder (rev 07)
+ff:0d.0 System peripheral: Intel Corporation Sandy Bridge Unicast Register 0 (rev 07)
+ff:0d.1 System peripheral: Intel Corporation Sandy Bridge Unicast Register 0 (rev 07)
+ff:0d.2 System peripheral: Intel Corporation Sandy Bridge Unicast Register 0 (rev 07)
+ff:0d.3 System peripheral: Intel Corporation Sandy Bridge Unicast Register 0 (rev 07)
+ff:0d.6 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller System Address Decoder 1 (rev 07)
+ff:0e.0 System peripheral: Intel Corporation Sandy Bridge Processor Home Agent (rev 07)
+ff:0e.1 Performance counters: Intel Corporation Sandy Bridge Processor Home Agent Performance Monitoring (rev 07)
+ff:0f.0 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller Registers (rev 07)
+ff:0f.1 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller RAS Registers (rev 07)
+ff:0f.2 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller Target Address Decoder 0 (rev 07)
+ff:0f.3 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller Target Address Decoder 1 (rev 07)
+ff:0f.4 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller Target Address Decoder 2 (rev 07)
+ff:0f.5 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller Target Address Decoder 3 (rev 07)
+ff:0f.6 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller Target Address Decoder 4 (rev 07)
+ff:10.0 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller Channel 0-3 Thermal Control 0 (rev 07)
+ff:10.1 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller Channel 0-3 Thermal Control 1 (rev 07)
+ff:10.2 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller ERROR Registers 0 (rev 07)
+ff:10.3 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller ERROR Registers 1 (rev 07)
+ff:10.4 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller Channel 0-3 Thermal Control 2 (rev 07)
+ff:10.5 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller Channel 0-3 Thermal Control 3 (rev 07)
+ff:10.6 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller ERROR Registers 2 (rev 07)
+ff:10.7 System peripheral: Intel Corporation Sandy Bridge Integrated Memory Controller ERROR Registers 3 (rev 07)
+ff:11.0 System peripheral: Intel Corporation Sandy Bridge DDRIO (rev 07)
+ff:13.0 System peripheral: Intel Corporation Sandy Bridge R2PCIe (rev 07)
+ff:13.1 Performance counters: Intel Corporation Sandy Bridge Ring to PCI Express Performance Monitor (rev 07)
+ff:13.4 Performance counters: Intel Corporation Sandy Bridge QuickPath Interconnect Agent Ring Registers (rev 07)
+ff:13.5 Performance counters: Intel Corporation Sandy Bridge Ring to QuickPath Interconnect Link 0 Performance Monitor (rev 07)
+ff:13.6 System peripheral: Intel Corporation Sandy Bridge Ring to QuickPath Interconnect Link 1 Performance Monitor (rev 07)
+

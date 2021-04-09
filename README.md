@@ -26,9 +26,9 @@ Whale includes two main components: stream multicast and worker-oriented communi
 We deploy the Whale system on a cluster consisting of 30 machines. Each machine is equipped with a 16-core 2.6GHz Intel(R) Xeon(R) CPU , 64GB RAM, 256GB HDD, Red Hat 6.2 system, a Mellanox InfiniBand FDR 56Gbps NIC and a 1Gbps Ethernet NIC. One machine is configured to be the master node running as nimbus, and the others machines serve as worker nodes running as supervisors.
 
 ## 3.2 Building Whale
-Before building Whale, developers should first take a look at [Developer documentation](DEVELOPER.md) to build Storm version 2.0.0-SNAPSHOT source code and install the library in local warehouse.
+Before building Whale, developers should first build Apache Storm version 2.0.0-SNAPSHOT source code and install the library in local warehouse.
 
-If you already deploy the Apache Storm (version 2.0.0) cluster environment, you only need to replace these jars to `$STORM_HOME/lib` and `$STORM_HOME/lib-worker`
+If you already deploy the Apache Storm (version 2.0.0-SNAPSHOT) cluster environment, you only need to replace these jars to `$STORM_HOME/lib` and `$STORM_HOME/lib-worker`
 > * storm-client-2.0.0-SNAPSHOT.jar
 > * whale-rdma-2.0.0-SNAPSHOT.jar
 
@@ -37,7 +37,7 @@ Dependent on RDMA jars
 > * rdmachannel-core-1.0-SNAPSHOT.jar
 
 ### storm-client.jar
-Storm-client module source code is maintained using [Maven](http://maven.apache.org/). Generate the executable jar by running
+Storm-client module source code is maintained using [Maven](http://maven.apache.org/) (version 3.5.4). Generate the executable jar by running
 ```
 $ cd storm-client
 $ mvn clean install -Dmaven.test.skip=true -Dcheckstyle.skip=true
@@ -58,31 +58,38 @@ $ mvn clean install -Dmaven.test.skip=true -Dcheckstyle.skip=true
 ```
 
 ### disni.jar and rdmachannel-core.jar
-Whale use RDMA Verbs by [Disni](https://github.com/zrlio/disni) , then we further encapsulate the RDMA Verbs primitive [RDAM-Channel](https://github.com/Whale-Storm/RdmaChannel) to make it more practical and efficient.
+Whale use RDMA Verbs by [Disni](https://github.com/zrlio/disni) , then we further encapsulate the RDMA Verbs primitive [RDAM-Channel](https://github.com/Whale2021/RDMAChannel) to make it more practical and efficient.
 
-Building disni.jar and rdmachannel-core.jar, you just only see [RDMA-Channel](https://github.com/Whale-Storm/RdmaChannel) project. It includes all environments running RDMA-channel.
+Building disni.jar and rdmachannel-core.jar, you just only see [RDMA-Channel](https://github.com/Whale2021/RDMAChannel) project. It includes all environments running RDMA-channel.
 
 # 4. Whale Benchmark
 ## 4.1 Buidling Benchmark
-Whale benchmark code is maintained using [Maven](http://maven.apache.org/). Generate the executable jar by running
+Whale benchmark code is maintained using [Maven](http://maven.apache.org/). Before generate the executable jar, you should build and install the benchmark-common model. Do all these steps by running
 ```
 $ cd benchmark/benchmark-common
 $ mvn clean install -Dmaven.test.skip=true -Dcheckstyle.skip=true
-$ cd ..//benchmark-didiOrderMatch
+$ cd ../benchmark-didiOrderMatch
 $ mvn clean package -Dmaven.test.skip=true -Dcheckstyle.skip=true
 ```
-Then you get the didi benchmark benmark-didiOrderMatch.jar.
+Then you get the didi benchmark benchmark-didiOrderMatch.jar.
+
+Generate the executable jar of benchmark-stockDeal by running 
+```
+$ cd benchmark/benchmark-stockDeal
+$ mvn clean package -Dmaven.test.skip=true -Dcheckstyle.skip=true
+```
+
+Then you get the stock benchmark benchmark-stockDeal.jar.
 
 ## 4.2 Running Benchmark
 After deploying a Whale cluster, you can launch Whale by submitting its jar to the cluster. Please refer to Storm documents for how to
 [set up a Storm cluster](https://storm.apache.org/documentation/Setting-up-a-Storm-cluster.html) and [run topologies on a Storm cluster](https://storm.apache.org/documentation/Running-topologies-on-a-production-cluster.ht)
 
-```shell
-$ storm jar benchmark-didiOrderMatch-2.0.0-SNAPSHOT.jar org.apache.storm.benchmark.multicast.MulticastModelBalancedParitalBenchTopology BenchTopology ordersTopic 30 1 480 3 rdma 1  
-$ storm jar benchmark-didiOrderMatch-2.0.0-SNAPSHOT.jar org.apache.storm.benchmark.multicast.MulticastModelBinomialTreeBenchTopology BenchTopology ordersTopic 30 1 480 rdma 1  
-$ storm jar benchmark-didiOrderMatch-2.0.0-SNAPSHOT.jar org.apache.storm.benchmark.multicast.MulticastModelSequentialBenchTopology BenchTopology ordersTopic 30 1 480 rdma 1  
+```
+$ storm jar benchmark-didiOrderMatch-2.0.0-SNAPSHOT.jar org.apache.storm.benchmark.multicast.MulticastModelBalancedParitalBenchTopology BenchTopology <ordersTopic> <numMachines> 1 <parallelism> 3 rdma 1  
+$ storm jar benchmark-stockDeal-2.0.0-SNAPSHOT.jar org.apache.storm.benchmark.stockdeal.StockDealBalancedPartialBenchTopology StockDeal <stockTopic> <numMachines> 1 <parallelism> 3 rdma 1
 ```
 
-(Didi data and NASDQ data have to be import before running)
+(Didi data and NASDAQ data have to be import into Kafka before running)
 ## License
 Whale is released under the [Apache 2 license](http://www.apache.org/licenses/LICENSE-2.0.html).
