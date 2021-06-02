@@ -10,16 +10,13 @@ However, in one-to-many data partitioning, the multiple downstream instances typ
 Therefore,  a DSPS actually sends a same data item to a machine multiple times, raising significant unnecessary costs for serialization and communications. 
 We show that such a mechanism can lead to serious performance bottleneck due to CPU overload. 
 
-To address the problem, we design and implement Whale, an efficient RDMA-assisted distributed stream processing system. 
-Two factors contribute to the efficiency of this design. 
-First, we propose a novel RDMA-assisted stream multicast scheme with a self-adjusting non-blocking tree structure to alleviate the CPU workloads of an upstream instance during data partitioning. 
-Second, we re-design the communication mechanism in existing DSPSs by replacing the instance-oriented communication with a new worker-oriented communication scheme, which saves significant costs for redundant serialization and communications. 
-We implement Whale on top of Apache Storm and evaluate it using experiments with large-scale datasets. The results show that Whale achieves 56.6x improvement of system throughput and 97% reduction of processing latency compared to existing designs.
+To address the problem, we propose Whale, a novel efficient RDMA-assisted one-to-many stream data partitioning design. Whale designs a novel self-adjusting non-blocking tree structure, which prevents the transfer queue of an instance from blocking due to stream dynamics. In addition, Whale designs and implements a new worker-oriented communication mechanism which replaces the instance-oriented design in previous DSPSs and significantly reduces the CPU overhead for serialization and communications. We implement Whale atop Apache Storm and evaluate its performance using large-scale datasets from real-world systems. The results show that Whale achieves 56.6x improvement of system throughput and 97% reduction of processing latency compared to existing designs.
 
 # 2. Architecture of Whale
 ![image](https://github.com/Whale2021/Whale/blob/master/images/Whale_architecture.png)
 
-Whale includes two main components: stream multicast and worker-oriented communication. The former fully exploits the zero-copy RDMA network to efficiently process highly dynamic streams. The stream multicast scheduler constructs a non-blocking multicast tree which elaborately chooses the maximum out-degree and minimizes the average multicast latency for an incoming stream. To cope with stream dynamics, the system workload monitor periodically monitors the current workloads of the source instance while the multicast controller adjusts the dynamic multicast structure accordingly. The work-oriented communication aims at reducing the redundant serialization and communication. The batch component packages the IDs with the data item into a BatchTuple and serializes BatchTuple for multicasting. The dispatcher deserializes BatchTuple and dispatches the receiving tuple to the locally hosted destination instances according to the obtained instance IDs.
+Whale includes two main components: stream multicast and worker-oriented communication. The former fully exploits the zero-copy RDMA network to efficiently process highly dynamic streams. 
+In the stream multicast component, Whale constructs the proposed efficient non-blocking multicast tree structure to support efficient one-to-many data partitioning. The system can dynamically adjust the structure to copy with stream dynamics. Specially, the stream multicast scheduler elaborately chooses the maximum out-degree of the non-blocking multicast tree structure for the incoming stream and minimizes the average multicast latency. The system workload monitor periodically monitors the current workloads of the source instance while the multicast controller adjusts the multicast structure accordingly. The worker-oriented communication component addresses at reducing the redundant serialization and communication. The batch component packages the IDs with the data item into a BatchTuple and serializes the BatchTuple for multicasting. The dispatcher deserializes the BatchTuple and dispatches the receiving tuple to the locally hosted destination instances according to the obtained instance IDs.
 
 # 3. How to use?
 ## 3.1 Environment
@@ -83,13 +80,26 @@ Then you get the stock benchmark benchmark-stockDeal.jar.
 
 ## 4.2 Running Benchmark
 After deploying a Whale cluster, you can launch Whale by submitting its jar to the cluster. Please refer to Storm documents for how to
-[set up a Storm cluster](https://storm.apache.org/documentation/Setting-up-a-Storm-cluster.html) and [run topologies on a Storm cluster](https://storm.apache.org/documentation/Running-topologies-on-a-production-cluster.ht)
+[set up a Storm cluster](https://storm.apache.org/documentation/Setting-up-a-Storm-cluster.html) and [run topologies on a Storm cluster](https://storm.apache.org/documentation/Running-topologies-on-a-production-cluster.html)
 
+Before you run benchmark, you need to do the follow steps:
+* [Set up Zookeeper (version 3.4.6 or higher) cluster](https://zookeeper.apache.org/doc/r3.4.6/index.html)
+* [Set up Kafka (version 2.10-0.10.2.0) cluster](https://kafka.apache.org/0102/documentation.html)
+* Set up Whale cluster like setting up [Storm](https://storm.apache.org/documentation/Setting-up-a-Storm-cluster.html)
+* Create a topic in Kafka and upload the data used for evaluation
 ```
-$ storm jar benchmark-didiOrderMatch-2.0.0-SNAPSHOT.jar org.apache.storm.benchmark.multicast.MulticastModelBalancedParitalBenchTopology BenchTopology <ordersTopic> <numMachines> 1 <parallelism> 3 rdma 1  
-$ storm jar benchmark-stockDeal-2.0.0-SNAPSHOT.jar org.apache.storm.benchmark.stockdeal.StockDealBalancedPartialBenchTopology StockDeal <stockTopic> <numMachines> 1 <parallelism> 3 rdma 1
+$ cd KAFKA_HOME
+$ bin/kafka-topics.sh --create --topic <ordersTopic> --replication-factor 2 --partitions <numofParitions> --zookeeper <nodexx:2181>
+$ cat DATA_HOME/didiData/xxx | bin/kafka-console-producer.sh  --broker-list <nodexx:9092> --sync --topic ordersTopic
+$ bin/kafka-topics.sh --create --topic <stockTopic> --replication-factor 2 --partitions <numofPartitions> --zookeeper <nodexx:2181>
+$ cat DATA_HOME/stockData/xxx | bin/kafka-console-producer.sh  --broker-list <nodexx:9092> --sync --topic stockTopic
 ```
 
-(Didi data and NASDAQ data have to be import into Kafka before running)
+* Submit benchmarks to Whale by executing the following commands:
+```
+$ storm jar benchmark-didiOrderMatch-2.0.0-SNAPSHOT.jar org.apache.storm.benchmark.multicast.MulticastModelBalancedParitalBenchTopology BenchTopology <ordersTopic> <numofMachines> 1 <parallelismLevels> 3 rdma 1  
+$ storm jar benchmark-stockDeal-2.0.0-SNAPSHOT.jar org.apache.storm.benchmark.stockdeal.StockDealBalancedPartialBenchTopology StockDeal <stockTopic> <numofMachines> 1 <parallelismLevels> 3 rdma 1
+```
+
 ## License
 Whale is released under the [Apache 2 license](http://www.apache.org/licenses/LICENSE-2.0.html).
