@@ -23,9 +23,9 @@ In the stream multicast component, Whale constructs the proposed efficient non-b
 We deploy the Whale system on a cluster consisting of 30 machines. Each machine is equipped with a 16-core 2.6GHz Intel(R) Xeon(R) CPU , 64GB RAM, 256GB HDD, Red Hat 6.2 system, a Mellanox InfiniBand FDR 56Gbps NIC and a 1Gbps Ethernet NIC. One machine is configured to be the master node running as nimbus, and the others machines serve as worker nodes running as supervisors.
 
 ## 3.2 Building Whale
-Before building Whale, developers should first build Apache Storm version 2.0.0-SNAPSHOT source code and install the library in local warehouse.
+Before building Whale, developers should first build the source code of Apache Storm version 2.0.0-SNAPSHOT and install the library in local warehouse.
 
-If you already deploy the Apache Storm (version 2.0.0-SNAPSHOT) cluster environment, you only need to replace these jars to `$STORM_HOME/lib` and `$STORM_HOME/lib-worker`
+If you already deploy Apache Storm (version 2.0.0-SNAPSHOT), you only need to replace these jars to `$STORM_HOME/lib` and `$STORM_HOME/lib-worker`
 > * storm-client-2.0.0-SNAPSHOT.jar
 > * whale-rdma-2.0.0-SNAPSHOT.jar
 
@@ -34,14 +34,14 @@ Dependent on RDMA jars
 > * rdmachannel-core-1.0-SNAPSHOT.jar
 
 ### storm-client.jar
-Storm-client module source code is maintained using [Maven](http://maven.apache.org/) (version 3.5.4). Generate the executable jar by running
+The source code of Storm-client module is maintained using [Maven](http://maven.apache.org/) (version 3.5.4). Generate the executable jar by running
 ```
 $ cd storm-client
 $ mvn clean install -Dmaven.test.skip=true -Dcheckstyle.skip=true
 ```
 
 ### whale-rdma.jar
-Whale-rdma module source code is maintained using [Maven](http://maven.apache.org/). Before build the whale-rdma module, you needd to generate whale-multicast and whale-common. Generate the executable jar by running
+The source code of Whale-rdma module is maintained using [Maven](http://maven.apache.org/). Before build the whale-rdma module, you need to generate whale-multicast and whale-common. Generate the executable jar by running
 ```
 $ cd whale-multicast
 $ mvn clean install -Dmaven.test.skip=true -Dcheckstyle.skip=true
@@ -82,7 +82,7 @@ Then you get the stock benchmark benchmark-stockDeal.jar.
 After deploying a Whale cluster, you can launch Whale by submitting its jar to the cluster. Please refer to Storm documents for how to
 [set up a Storm cluster](https://storm.apache.org/documentation/Setting-up-a-Storm-cluster.html) and [run topologies on a Storm cluster](https://storm.apache.org/documentation/Running-topologies-on-a-production-cluster.html)
 
-Before you run benchmark, you need to do the follow steps:
+Before you run benchmarks, you need to do the follow steps:
 * [Set up Zookeeper (version 3.4.6 or higher) cluster](https://zookeeper.apache.org/doc/r3.4.6/index.html)
 * [Set up Kafka (version 2.10-0.10.2.0) cluster](https://kafka.apache.org/0102/documentation.html)
 * Set up Whale cluster like setting up [Storm](https://storm.apache.org/documentation/Setting-up-a-Storm-cluster.html)
@@ -95,7 +95,7 @@ $ bin/kafka-topics.sh --create --topic <stockTopic> --replication-factor 2 --par
 $ cat DATA_HOME/stockData/xxx | bin/kafka-console-producer.sh  --broker-list <nodexx:9092> --sync --topic stockTopic
 ```
 
-* Submit benchmarks to Whale by executing the following commands:
+* Then submit benchmarks to Whale by executing the following commands:
 ```
 $ storm jar benchmark-didiOrderMatch-2.0.0-SNAPSHOT.jar org.apache.storm.benchmark.multicast.MulticastModelBalancedParitalBenchTopology BenchTopology <ordersTopic> <numofMachines> 1 <parallelismLevels> 3 rdma 1  
 $ storm jar benchmark-stockDeal-2.0.0-SNAPSHOT.jar org.apache.storm.benchmark.stockdeal.StockDealBalancedPartialBenchTopology StockDeal <stockTopic> <numofMachines> 1 <parallelismLevels> 3 rdma 1
