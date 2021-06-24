@@ -103,3 +103,13 @@ $ storm jar benchmark-stockDeal-2.0.0-SNAPSHOT.jar org.apache.storm.benchmark.st
 
 ## License
 Whale is released under the [Apache 2 license](http://www.apache.org/licenses/LICENSE-2.0.html).
+
+
+### Publications
+If you want to know more detailed information, please refer to this paper:
+Jie Tan, Hanhua Chen, Yonghui Wang, Hai Jin, "Whale: Efficient One-to-Many Data Partitioning in RDMA-assisted Distributed Stream Processing Systems," Proceedings of International Conference for High Performance Computing, Networking, Storage and Analysis (SC 2021), St. Louis. MO, USA, Nov. 14-19, 2021. 
+
+### Authors and Copyright
+Whale is developed in National Engineering Research Center for Big Data Technology and System, Cluster and Grid Computing Lab, Services Computing Technology and System Lab, School of Computer Science and Technology, Huazhong University of Science and Technology, Wuhan, China by Jie Tan (tjmaster@hust.edu.cn), Hanhua Chen (chen@hust.edu.cn), Yonghui Wang (yhw@hust.edu.cn), Hai Jin (hjin@hust.edu.cn).
+
+Copyright (C) 2021, [STCS & CGCL](grid.hust.edu.cn) and [Huazhong University of Science and Technology](www.hust.edu.cn).
