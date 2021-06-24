@@ -107,6 +107,7 @@ Whale is released under the [Apache 2 license](http://www.apache.org/licenses/LI
 
 ### Publications
 If you want to know more detailed information, please refer to this paper:
+
 Jie Tan, Hanhua Chen, Yonghui Wang, Hai Jin, "Whale: Efficient One-to-Many Data Partitioning in RDMA-assisted Distributed Stream Processing Systems," Proceedings of International Conference for High Performance Computing, Networking, Storage and Analysis (SC 2021), St. Louis. MO, USA, Nov. 14-19, 2021. 
 
 ### Authors and Copyright
